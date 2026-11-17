@@ -53,3 +53,26 @@ output "target_group_arn" {
   description = "ARN of the application Target Group"
   value       = module.load_balancer.target_group_arn
 }
+
+
+
+
+output "cloudwatch_dashboard_name" {
+  description = "CloudWatch monitoring dashboard"
+  value       = module.monitoring.dashboard_name
+}
+
+output "cpu_alarm_names" {
+  description = "Application CPU alarms"
+  value       = module.monitoring.cpu_alarm_names
+}
+
+output "status_alarm_names" {
+  description = "EC2 status-check alarms"
+  value       = module.monitoring.status_alarm_names
+}
+
+output "unhealthy_target_alarm_name" {
+  description = "ALB unhealthy target alarm"
+  value       = module.monitoring.unhealthy_target_alarm_name
+}

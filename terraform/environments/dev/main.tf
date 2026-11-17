@@ -58,3 +58,14 @@ module "load_balancer" {
 
 
 
+module "monitoring" {
+  source = "../../modules/monitoring"
+
+  project_name            = var.project_name
+  environment             = var.environment
+  aws_region              = var.aws_region
+  admin_instance_id       = module.compute.admin_instance_id
+  app_instance_ids        = module.compute.app_instance_ids
+  alb_arn_suffix          = module.load_balancer.alb_arn_suffix
+  target_group_arn_suffix = module.load_balancer.target_group_arn_suffix
+}
