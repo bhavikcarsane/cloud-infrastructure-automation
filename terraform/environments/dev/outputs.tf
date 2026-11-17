@@ -47,3 +47,9 @@ output "ubuntu_ami_id" {
   description = "Ubuntu 24.04 AMI selected dynamically"
   value       = module.compute.ubuntu_ami_id
 }
+
+
+output "target_group_arn" {
+  description = "ARN of the application Target Group"
+  value       = module.load_balancer.target_group_arn
+}
