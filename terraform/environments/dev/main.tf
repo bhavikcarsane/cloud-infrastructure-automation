@@ -1,3 +1,4 @@
+# GitHub Actions CI validation test
 data "aws_availability_zones" "available" {
   state = "available"
 }
