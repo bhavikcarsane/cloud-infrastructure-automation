@@ -14,3 +14,14 @@ variable "environment" {
   type        = string
   default     = "dev"
 }
+
+
+variable "github_org" {
+  description = "GitHub organization or username that owns the repository"
+  type        = string
+}
+
+variable "github_repo" {
+  description = "GitHub repository allowed to assume the Terraform automation role"
+  type        = string
+}
