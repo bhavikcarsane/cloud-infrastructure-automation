@@ -36,11 +36,10 @@ resource "aws_instance" "admin" {
 
 
 resource "aws_instance" "app" {
-  count = length(var.private_subnet_ids)
-
+  count                       = var.app_instance_count
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.app_instance_type
-  subnet_id                   = var.private_subnet_ids[count.index]
+  subnet_id                   = var.private_subnet_ids[count.index % length(var.private_subnet_ids)]
   vpc_security_group_ids      = [var.app_security_group_id]
   key_name                    = aws_key_pair.this.key_name
   associate_public_ip_address = false

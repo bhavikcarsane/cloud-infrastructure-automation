@@ -33,6 +33,7 @@ module "security" {
 module "compute" {
   source = "../../modules/compute"
 
+  app_instance_count      = var.app_instance_count
   project_name            = var.project_name
   environment             = var.environment
   public_subnet_id        = module.network.public_subnet_ids[0]
