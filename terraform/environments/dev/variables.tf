@@ -69,3 +69,10 @@ variable "app_port" {
   type        = number
   default     = 80
 }
+
+
+variable "app_instance_count" {
+  description = "Number of application servers"
+  type        = number
+  default     = 3
+}

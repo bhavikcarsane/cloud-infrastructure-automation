@@ -44,3 +44,10 @@ variable "app_instance_type" {
   type        = string
   default     = "t3.micro"
 }
+
+
+variable "app_instance_count" {
+  description = "Number of application EC2 instances"
+  type        = number
+  default     = 2
+}
